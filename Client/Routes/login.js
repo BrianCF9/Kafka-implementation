@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use(router.post('/login', (req, res) => {
     const { user, pass } = req.body;
-    console.log(req.body)
+    // console.log(req.body)
     const resp = manageUser(req.body);
     res.status(200).send({ ...req.body, message: resp })
 }))

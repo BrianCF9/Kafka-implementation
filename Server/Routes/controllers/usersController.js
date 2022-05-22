@@ -40,7 +40,7 @@ const consume = async () => {
                 const data = JSON.parse(message.value.toString());
 
                 const res = manageUser(data);
-                console.log(res, message);
+                console.log(res, message.value.toString());
 
             },
         })
@@ -67,15 +67,15 @@ const manageUser = (user) => {
             return "Registradísimo papi, bienvenido."
         }
         else {
-
+            register[JSON.stringify(user.user.user)].push(user.fecha);
 
             if (attempts_(register[JSON.stringify(user.user.user)], user.fecha)) {
-                register[JSON.stringify(user.user.user)].push(user.fecha);
+                // register[JSON.stringify(user.user.user)].push(user.fecha);
                 blocked.push(JSON.stringify(user.user.user));
                 return "Bloqueadísimo papi";
             }
             else {
-                register[JSON.stringify(user.user.user)].push(user.fecha);
+
                 return "Intento guardado rey"
             }
         }
