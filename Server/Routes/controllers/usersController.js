@@ -40,7 +40,7 @@ const consume = async () => {
                 const data = JSON.parse(message.value.toString());
 
                 const res = manageUser(data);
-                // console.log(res);
+                console.log(res, message);
 
             },
         })

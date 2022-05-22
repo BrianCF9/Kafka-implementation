@@ -10,9 +10,7 @@ const router = Router()
 
 app.use(router.get('/', (req, res) => {
     res.send('Hola mundo');
-    consume().catch((err) => {
-        console.error("error in consumer: ", err)
-    });
+
 }))
 
 app.use(router.get('/blocked', (req, res) => {
@@ -23,5 +21,8 @@ app.use(router.get('/blocked', (req, res) => {
 }))
 
 app.listen(3001, () => {
+    consume().catch((err) => {
+        console.error("error in consumer: ", err)
+    });
     console.log(`API-Blocked run in: http://localhost:3001.`)
 });
