@@ -36,7 +36,7 @@ const consume = async () => {
 
         await consumer.run({
             eachMessage: ({ message }) => {
-                console.log("Nais")
+                console.log("Login Recibido Exitosamente...")
                 const data = JSON.parse(message.value.toString());
 
                 const res = manageUser(data);
@@ -56,7 +56,7 @@ const manageUser = (user) => {
     // console.log(blocked);
     // console.log(register);
     if (blocked.includes(JSON.stringify(user.user.user))) {
-        return "Estas bloqueado papu";
+        return "Actualmente tu cuenta se encuentra bloqueada, contacta a soporte para poder brindarte ayuda";
     }
     else {
 
@@ -64,7 +64,7 @@ const manageUser = (user) => {
             var array = []
             array.push(user.fecha);
             register[JSON.stringify(user.user.user)] = array;
-            return "Registradísimo papi, bienvenido."
+            return "Bienvenido a Fruitter, Primer Login Exitoso"
         }
         else {
             register[JSON.stringify(user.user.user)].push(user.fecha);
@@ -72,11 +72,11 @@ const manageUser = (user) => {
             if (attempts_(register[JSON.stringify(user.user.user)], user.fecha)) {
                 // register[JSON.stringify(user.user.user)].push(user.fecha);
                 blocked.push(JSON.stringify(user.user.user));
-                return "Bloqueadísimo papi";
+                return "Has superado el máximo de intentos de inicio de sesión, tu cuenta será bloqueada";
             }
             else {
 
-                return "Intento guardado rey"
+                return "Lamentamos decir esto, pero tus credenciales no corresponden, inténtalo nuevamente"
             }
         }
 
