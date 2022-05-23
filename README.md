@@ -127,7 +127,7 @@ Entonces...
 - Si el usuario no está en esa tupla, se utiliza el diccionario de inicios de sesiones para calcular los intentos de login del último minuto y se devuelve un blocked si este es >=5, o un intento logrado si este es <5, además en este último caso se agrega el inicio de sesión actual al diccionario creado cuando inició sesión por primera vez.
 
 
-Además este módulo posee un método GET(), el cuál retorna una lista con todos los usuarios bloqueado actualmente, para acceder a ella hay que gestar una consulta GET() a la siguiente url:
+Además este módulo posee un método GET(), el cuál retorna una lista con todos los usuarios bloqueados actualmente, para acceder a ella hay que gestar una consulta GET() a la siguiente url:
 
 - http://localhost:3001/blocked
 
