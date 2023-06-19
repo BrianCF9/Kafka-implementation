@@ -1,4 +1,4 @@
-# Tarea2_SD - Rubén Hermosilla - Brian Castro
+
 #### Melon Musk compró una de las plataformas de redes sociales más grande del mundo: Fruitter. Esta plataforma funciona correctamente, sin embargo, a Melon Musk no le gusta el sistema de login que este posee (a pesar de ser un sistema completo y funcional), debido a que él busca cosas muy específicas, entre ellas eliminar a los bots dentro de la plataforma. 
 Los requerimientos que Melon Musk quiere para el nuevo sistema de login son los siguientes:
 - Login en una API REST
